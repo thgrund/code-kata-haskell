@@ -4,8 +4,6 @@ import Data.Maybe
 import qualified Data.Map as M
 import qualified Data.Char as Char
 
-type WordNum = String
-
 main :: IO()
 main = do
     print $ magic 5
@@ -16,6 +14,7 @@ main = do
     print $ magic 13954
     print $ magic 1234045234
     print $ magic 123495324324320
+    print $ magic 111222333444555666777888
 
 capitalized :: Maybe String -> Maybe String
 capitalized ms1 = do
@@ -69,7 +68,10 @@ groupOfThree x y = M.lookup ( (reverse [1 .. ((lengthInt y - 1) `div` 3)]) !! ((
         (1, "thousand"),
         (2, "million"),
         (3, "trillion"),
-        (4, "quadrillion")]
+        (4, "quadrillion"),
+        (5, "quintillion"),
+        (6, "sextillion"),
+        (7, "septillion")]
 
 ones :: (Integral a, Ord a) => a -> a -> [Maybe String] -> [Maybe String]
 ones n m xs
